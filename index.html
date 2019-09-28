@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+<!--        &lt;!&ndash; 最新版本的 Bootstrap 核心 CSS 文件 &ndash;&gt;-->
+<!--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+<!--        &lt;!&ndash; 最新的 Bootstrap 核心 JavaScript 文件 &ndash;&gt;-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <title>阅卷</title>
+    </head>
+    <body>
+
+        <div class="top">
+            <div class="budget">
+                <div class="budget__title">
+                  Murata Manufacturing  Review:
+                </div>
+                
+                <div class="budget__value hover">正确答案</div>
+                
+                <div class="budget__income clearfix hide">
+                    <div class="budget__income--text"><span>言語<br></span>1: A  <br>2: D  <br>3: E  <br>4: A  <br>5: C  <br></div>
+                    <div class="budget__income--text"><br>6: B  <br>7: E  <br>8: A  <br>9: A  <br>10: E  <br></div>
+                    <div class="budget__income--text"><br>11: C  <br>12: D  <br>13: A  <br>14: D  <br>15: C  <br></div>
+                    <div class="budget__income--text"><br>16: B  <br>17: C  <br>18: C  <br>19: E  <br>20: E  <br></div>
+                    <div class="budget__income--text"><br>21: D  <br>22: B  <br>23: A  <br>24: B  <br>25: C  <br></div>
+                    <div class="budget__income--text"><span>非言語<br></span>26: G  <br>27: C  <br>28: D  <br>29: E  <br>30: C  <br></div>
+                    <div class="budget__income--text"><br>31: B  <br>32: G  <br>33: E  <br>34: F  <br>35: C  <br></div>
+                    <div class="budget__income--text"><br>36: D  <br>37: C  <br>38: F  <br>39: C  <br>40: B  <br></div>
+                    <div class="budget__income--text"><br>41: E  <br>42: G  <br>43: G  <br>44: E  <br>45: I  <br></div>
+                    <div class="budget__income--text"><br>46: C  <br>47: F  <br>48: B  <br>49: E  <br>50: A  <br></div>
+
+
+                </div>
+
+            </div>
+        </div>
+        
+        
+        
+        <div class="bottom">
+            <div class="add">
+                <div class="add__container">
+                    <span class="g1">请输入答案</span>
+                    <form onload = "document.forms[0].elements[0].focus();">
+                        <h2>言語</h2>
+                        <input type="text" class="add__description" placeholder="1~5" autofocus="autofocus" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,0);"/>
+<!--                        <span class="g2">6~10</span>-->
+                        <input type="text" class="add__description" placeholder="6~10" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,1);"/>
+                        <input type="text" class="add__description" placeholder="11~15" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,2);"/>
+                        <input type="text" class="add__description" placeholder="16~20" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,3);"/>
+                        <input type="text" class="add__description" placeholder="21~25" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,4);"/>
+                        <h2>非言語</h2>
+                        <input type="text" class="add__description" placeholder="1~5" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,5);"/>
+                        <input type="text" class="add__description" placeholder="6~10" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,6);"/>
+                        <input type="text" class="add__description" placeholder="11~15" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,7);"/>
+                        <input type="text" class="add__description" placeholder="16~20" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,8);"/>
+                        <input type="text" class="add__description" placeholder="21~25" id="stu_ans" οnkeyup="this.value =this.value.replace(/\s/g,'').replace(/[^\d]/g,'').replace(/(\d{4})(?=\d)/g,'$1 ');" maxlength=5 onkeyup = "moveNext(this,9);"/>
+                    </form>
+                        <button class="add__btn" onclick="find_diff()" id="myBtn"><i class="ion-ios-checkmark-outline"></i></button>
+
+                </div>
+            </div>
+
+            <div class="container clearfix row">
+                <div clsss="row">
+
+                    <div class="income col-md-6">
+                        <h2 class="icome__title">言語</h2>
+
+                        <div class="income__list">
+
+
+                            <div class="item clearfix" id="income-0">
+                                <div class="item__description">正确题数</div>
+                                <div class="right clearfix">
+                                    <div class="item__value" id="lan-correct">?/25</div>
+
+                                </div>
+                            </div>
+
+                            <div class="item clearfix" id="income-2">
+                                <div class="item__description">错题</div>
+                                <div class="right clearfix">
+                                    <div class="item__value" id="lan-wrong-ans">题号、 正确答案： 错误答案： </div>
+                                </div>
+                            </div>
+
+                            <div class="item clearfix" id="income-1">
+                                <div class="item__description">分数</div>
+                                <div class="right clearfix">
+                                    <div class="item__value" id="lan-score">?</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="expenses col-md-6">
+                        <h2 class="expenses__title">非言語</h2>
+
+                        <div class="expenses__list">
+
+
+                            <div class="item clearfix" id="expense-0">
+                                <div class="item__description">正确题数</div>
+                                <div class="right clearfix">
+                                    <div class="item__value" id="non-lan-correct">?/25</div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="item clearfix" id="expense-2">
+                                <div class="item__description">错题</div>
+                                <div class="right clearfix">
+                                    <div class="item__value" id="non-lan-wrong-ans">题号、 正确答案： 错误答案：</div>
+                                </div>
+                            </div>
+
+                            <div class="item clearfix" id="expense-1">
+                                <div class="item__description">分数</div>
+                                <div class="right clearfix">
+                                    <div class="item__value" id="non-lan-score">?</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="total-score">
+                    <h2> 总分：<span class="expenses__title" id="total-score">?</span></h2>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <script src="https://cdn.bootcss.com/vue/2.0.3/vue.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
